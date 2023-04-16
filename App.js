@@ -1,11 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
+// import RestaurantItem from './src/components/RestaurantItem';
+// import restaurants from "./assets/data/restaurants.json"
+import HomeScreen from './src/screens/HomeScreen';
+import { RestaurantDetailsScreen } from './src/screens/RestaurantDetailsScreen';
+import { DishDetailsScreen } from './src/screens/DishDetailsScreen';
+import { BasketScreen } from './src/screens/BasketScreen';
+import { OrderScreen } from './src/screens/OrderScreen';
+import { OrderDetailsScreen } from './src/screens/OrderDetailsScreen';
+//mport { RestaurantDetailsScreen } from './src/screens/RestaurantDetailsScreen';
+//import RestaurantDetailsScreen from './src/screens/HomeScreen/RestaurantDetailsScreen';
+//import RestaurantDetailsScreen from './src/screens/HomeScreen/RestaurantDetailsScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* <HomeScreen/> */}
+      {/* <RestaurantDetailsScreen/> */}
+      {/* <DishDetailsScreen/> */}
+      {/* <BasketScreen/> */}
+      {/* <OrderScreen/> */}
+      <OrderDetailsScreen/>
+      <StatusBar  />
     </View>
   );
 }
@@ -17,4 +33,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });
