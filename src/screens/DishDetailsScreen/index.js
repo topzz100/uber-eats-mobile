@@ -1,12 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'; 
 import { Feather } from '@expo/vector-icons';
 import restaurants from '../../../assets/data/restaurants.json'
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const dish = restaurants[0].dishes[1]
 
 export const DishDetailsScreen = () => {
+    const navigation = useNavigation()
     const [count, setCount] = useState(0)
     return (
         <View style={styles.page}>
@@ -19,9 +21,11 @@ export const DishDetailsScreen = () => {
                 <Text style={styles.quantity}>{count}</Text>
                 <Feather name="plus-circle" size={55} color="black" onPress={() => setCount(count+1)}/>
             </View>
-            <View style={styles.button}>
+            <Pressable style={styles.button} onPress={() => {
+                navigation.navigate("Basket")
+            }}>
                 <Text style={styles.add}>Add {count} to basket</Text>
-            </View>
+            </Pressable>
         </View>
     )
 }
@@ -54,7 +58,7 @@ const styles = StyleSheet.create({
     quantity: {
         marginHorizontal: 10,
         fontSize: 25,
-        fontFamily: 'bold'
+        fontFamily: 700
     },
     button:{
         backgroundColor: 'black',

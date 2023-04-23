@@ -10,8 +10,8 @@ const restaurant = restaurants[2];
 export const BasketScreen = () => {
   return (
     <View style={styles.page}>
-      <Text style={styles.name}>{restaurant.name}</Text>
-      <Text style={{ fontWeight: "600", fontSize: 19 }}>Your Items</Text>
+      <Text style={{fontSize: 20, fontWeight: 'bold', paddingHorizontal: 10}}>{restaurant.name}</Text>
+      <Text style={{ fontWeight: "600", fontSize: 19 ,paddingHorizontal: 10 }}>Your Items</Text>
       <FlatList
         data={restaurant.dishes}
         renderItem={({ item }) => <BasketDishItem basketDish={item} />}
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     paddingVertical: 20,
-    padding: 10,
+    
   },
   seperator: {
     height: 1,

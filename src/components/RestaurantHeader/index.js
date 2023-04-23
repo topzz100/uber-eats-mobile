@@ -1,18 +1,21 @@
 import { View, Text, StyleSheet, Image, } from 'react-native'
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { Pressable } from 'react-native';
 
 
 //const restaurant = restaurants[0]
 
 export function RestaurantHeader ({restaurant}) {
+  const navigation = useNavigation()
   return (
     <View >
       <View styles={styles.imgContainer}>
         <Image source={{uri: restaurant.image}} style={styles.image}/>
-        <View style={styles.icon}>
+        <Pressable style={styles.icon} onPress={() => navigation.goBack()} >
           <Ionicons name="arrow-back-sharp" size={24} color="black" />
-        </View>
+        </Pressable>
 
       </View>
       <View style={styles.container}>

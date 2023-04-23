@@ -9,14 +9,11 @@ export const OrderDetailsScreen = () => {
   return (
     <View style={styles.page}>
       
-      <View style={{marginHorizontal: 10}}>
       <FlatList
       ListHeaderComponent={() => <OrderDetailsHeader />}
             data ={restaurants[0].dishes}
             renderItem={({item}) => <BasketDishItem basketDish={item}/> }
         />
-
-      </View>
     </View>
   )
 }

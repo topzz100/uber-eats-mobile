@@ -17,6 +17,7 @@ export const BasketDishItem = ({ basketDish }) => {
 
   const styles = StyleSheet.create({
     row: {
+        marginHorizontal: 10,
       marginTop: 15,
       flexDirection: "row",
       alignItems: "center",

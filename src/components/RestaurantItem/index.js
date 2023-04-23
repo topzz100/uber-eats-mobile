@@ -33,18 +33,19 @@
 // })
 
 // export default RestaurantItem
+import { useNavigation } from '@react-navigation/native';
+import { Pressable } from 'react-native';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
  const RestaurantItem =({restaurant}) => {
-  // return(
-  //   <View style={styles.restContainer}>
-  //       <Image source={{uri: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg"}} style={styles.image}/>  
-  //       <Text style={styles.title}>Cheese Tequeños</Text>
-  //       <Text style={styles.subtitle}>$ 1.99 15-30 minutes</Text>
-  //     </View>
-  // )
+
+  const navigation = useNavigation()
+  const onPress =() => {
+    navigation.navigate("Restaurant", {id: restaurant.id})
+  }
+  
   return(
-    <View style={styles.restContainer}>
+    <Pressable onPress={onPress} style={styles.restContainer}>
         <Image source={{uri: restaurant.image}} style={styles.image}/>
         <View style={styles.row}>
           <View >
@@ -58,7 +59,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
           </View>
         </View>
           
-      </View>
+      </Pressable>
   )
 }
 

@@ -11,18 +11,24 @@ import { OrderDetailsScreen } from './src/screens/OrderDetailsScreen';
 //mport { RestaurantDetailsScreen } from './src/screens/RestaurantDetailsScreen';
 //import RestaurantDetailsScreen from './src/screens/HomeScreen/RestaurantDetailsScreen';
 //import RestaurantDetailsScreen from './src/screens/HomeScreen/RestaurantDetailsScreen';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { HomeTabs, RootNavigator } from './src/navigation';
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <HomeScreen/> */}
-      {/* <RestaurantDetailsScreen/> */}
-      {/* <DishDetailsScreen/> */}
-      {/* <BasketScreen/> */}
-      {/* <OrderScreen/> */}
-      <OrderDetailsScreen/>
-      <StatusBar  />
-    </View>
+    <NavigationContainer>
+
+      {/* <View style={styles.container}> */}
+        {/* <HomeScreen/> */}
+        {/* <RestaurantDetailsScreen/> */}
+        {/* <DishDetailsScreen/> */}
+        {/* <BasketScreen/> */}
+        {/* <OrderScreen/> */}
+        {/* <OrderDetailsScreen/> */}
+        <RootNavigator/>
+        {/* <HomeTabs/> */}
+        <StatusBar  />
+      {/* </View> */}
+    </NavigationContainer>
   );
 }
 

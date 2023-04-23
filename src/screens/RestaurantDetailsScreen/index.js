@@ -4,11 +4,15 @@ import React from 'react'
 import restaurants from "../../../assets/data/restaurants.json";
 import { DishListItem } from '../../components/DishListItem';
 import { RestaurantHeader } from '../../components/RestaurantHeader';
+import { useRoute } from '@react-navigation/native';
 
 
 const restaurant = restaurants[0]
 
 export function RestaurantDetailsScreen () {
+  const route = useRoute()
+  const id = route.params.id
+  console.log(id)
   return (
     <View style={styles.page}>
       {/* <View styles={styles.imgContainer}>
@@ -26,7 +30,8 @@ export function RestaurantDetailsScreen () {
       <FlatList
       ListHeaderComponent={() => <RestaurantHeader restaurant ={restaurant}/>}
         data={restaurant.dishes}
-        renderItem={({item}) => <DishListItem dish={item}/> }
+        renderItem={({item}) => <DishListItem dish={item}/>
+       } 
       />
     </View> 
   )
